@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
+
 import Input from './input';
+import Content from './content';
+
 
 class Card extends Component {
 
@@ -69,6 +72,7 @@ class Card extends Component {
         {
           inputData.map(data => Input( (data), this.handleInputChange ))
         }
+        <Content data={this.state}/>
         </div>
       );
     }
