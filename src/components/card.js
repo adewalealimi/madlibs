@@ -30,7 +30,7 @@ class Card extends Component {
     super()
 
     this.state = INITIAL_STATE;
-    
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleformSubmit = this.handleformSubmit.bind(this);
   }
@@ -84,7 +84,9 @@ class Card extends Component {
         <form onSubmit={this.handleformSubmit} className="card">
         <div className="card_inputs">
         {
-          inputData.map(data => Input( (data), this.handleInputChange ))
+          inputData.map((data, index) => {
+                        return Input( (data), this.handleInputChange, index) 
+        })
         }
         </div>
         <button type="submit">{!this.state.contentVisible ? 'Generate Mad Lib' : 'Clear Form'}</button>
